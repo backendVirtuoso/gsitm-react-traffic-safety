@@ -8,8 +8,10 @@ import './App.css';
 const App = () => {
   const [category, setCategory] = useState('all');
   const onSelect = useCallback((category) => setCategory(category), []);
+
   const [datas, setDatas] = useState([]);
-  const onData = useCallback((datas) => setDatas(datas), []);
+  const [filteredDatas, setFilteredDatas] = useState([]);
+  const onData = useCallback((datas) => setFilteredDatas(datas), []);
 
   console.log(datas);
 
@@ -28,7 +30,7 @@ const App = () => {
       </div>
       <div>
         <Search category={category} onData={onData} datas={datas} />
-        <AccidentsList category={category} datas={datas} onPoint={onPoint} />
+        <AccidentsList category={category} datas={filteredDatas} onPoint={onPoint} setDatas={setDatas} />
         <Map location={location} />
       </div>
     </div>

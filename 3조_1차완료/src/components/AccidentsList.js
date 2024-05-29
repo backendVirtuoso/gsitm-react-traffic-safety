@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AccidentItem from './AccidentItem';
 import './Accident.scss';
 
-const AccidentsList = ({ category, datas, onPoint }) => {
+const AccidentsList = ({ category, datas, onPoint, setDatas }) => {
   const [accidents, setAccidents] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -13,8 +13,7 @@ const AccidentsList = ({ category, datas, onPoint }) => {
 
   const accidentCategorySearchFilter =
     datas &&
-    accidents &&
-    accidents.filter((accident) => accident.ACDNT_DIV_NM === category);
+    datas.filter((accident) => accident.ACDNT_DIV_NM === category);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,22 +29,21 @@ const AccidentsList = ({ category, datas, onPoint }) => {
           `https://openapi.gg.go.kr/TfcacdarM?KEY=e682e21122bc4c089da7c4d23ebd312f&TYPE=json&pIndex=3&pSize=500`
         );
 
-        const jsonData1 = response1.data.TfcacdarM[1].row;
-        const jsonData2 = response2.data.TfcacdarM[1].row;
-        const jsonData3 = response3.data.TfcacdarM[1].row;
+        const mergedData = [
+          ...response1.data.TfcacdarM[1].row,
+          ...response2.data.TfcacdarM[1].row,
+          ...response3.data.TfcacdarM[1].row,
+        ];
 
-        const jsonData4 = jsonData1.concat(jsonData2);
-        const response = jsonData4.concat(jsonData3);
-
-        console.log(response);
-        setAccidents(response);
+        setAccidents(mergedData);
+        setDatas(mergedData);
       } catch (e) {
         console.log(e);
       }
       setLoading(false);
     };
     fetchData();
-  }, [category]);
+  }, [setDatas]);
 
   //로딩시
   if (loading) {
@@ -64,16 +62,30 @@ const AccidentsList = ({ category, datas, onPoint }) => {
   };
 
   return (
-    <div className="list">
-      {/* {accidents.map((accident) => (
+    // <div className="list">
+    //   {accidents.map((accident) => (
+    //     <AccidentItem
+    //       className="item"
+    //       width={898}
+    //       height={117}
+    //       key={accident.id}
+    //       accident={accident}
+    //       onPoint={onPoint}
+    //       onClick={() => handleItemClick(accident.location)}
+    //     />
+    //   ))} 
+    // </div>
+
+        <div className="list">
+       {/* {accidents.map((accident) => (
         <AccidentItem
           className="item"
           width={898}
           height={117}
           accident={accident}
         />
-      ))} */}
-      {/* {accidentCategoryFilter.map((accident, index) => (
+      ))}
+       {accidentCategoryFilter.map((accident, index) => (
         <AccidentItem
           className="item"
           width={898}
@@ -93,6 +105,7 @@ const AccidentsList = ({ category, datas, onPoint }) => {
           onClick={handleItemClick}
         />
       ))}
+      
     </div>
   );
 };

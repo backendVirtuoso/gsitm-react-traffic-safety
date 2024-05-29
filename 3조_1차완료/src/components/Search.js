@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Accident.scss';
 
 const selectYears = [
-  { year: '2012' },
+  { year: "2012" },
   { year: '2013' },
   { year: '2014' },
   { year: '2015' },
@@ -50,19 +50,29 @@ const Search = ({ onData, category, datas }) => {
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
 
+  // const handleSearch = () => {
+  //   if (!datas) return;
+  //   const result = datas.filter(
+  //     (item) =>
+  //       (selectedCity ? item.sigunNm === selectedCity : true) &&
+  //       (selectedYear ? item.acdntYy === selectedYear : true) &&
+  //       (category ? item.acdntDivNm === category : true)
+  //   );
+  //   onData(result);
+  //   console.log('Filtered Data:', result);
+  // };
   const handleSearch = () => {
-    if (!datas) return;
-
+    if (!datas || datas.length === 0) return;
     const result = datas.filter(
       (item) =>
         (selectedCity ? item.sigunNm === selectedCity : true) &&
         (selectedYear ? item.acdntYy === selectedYear : true) &&
-        (category ? item.acdntDivNm === category : true)
+        (category && category !== 'all' ? item.acdntDivNm === category : true)
     );
-
     onData(result);
     console.log('Filtered Data:', result);
   };
+
 
   // const handleSearch = () => {
   //   // datas가 유효한 배열인지 확인합니다.
