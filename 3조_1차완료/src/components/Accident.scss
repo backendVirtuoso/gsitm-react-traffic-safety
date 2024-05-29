@@ -1,0 +1,89 @@
+/* Category.js */
+
+.categoryBox {
+  background-color: rgb(27, 27, 34);
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+
+    .category {
+      width: 100%;
+      padding: 25px 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #aaa;
+      transition: 0.5s;
+      cursor: pointer;
+      // 링크 걸게되면 자동 커서(손가락모양)이 되기 때문에 필요 없을 수도 있음
+
+      &:hover {
+        background-color: rgb(89, 192, 170);
+        color: white;
+      }
+
+      // 사고유형 카테고리 선택 시
+      &:focus {
+        background-color: rgb(89, 192, 170);
+        color: white;
+      }
+    }
+  }
+}
+
+/* Search.js */
+
+.searchBox {
+  background-color: white;
+  border: 1px solid #aaa;
+  width: 300px;
+  padding: 20px 15px;
+
+  .selectBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    p {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: auto 0;
+    }
+
+    select {
+      width: 60%;
+      padding: 5px 8px;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 5px;
+    margin: 30px auto 70px;
+    cursor: pointer;
+  }
+}
+
+/* AccidentsList.js */
+
+.list {
+  width: 900px;
+  border: 1px solid #aaa;
+  overflow-y: auto;
+
+  .item {
+    padding: 15px;
+    border-bottom: 1px solid #aaa;
+
+    p {
+      margin: 5px 0;
+
+      &:first-of-type {
+        color: rgb(89, 192, 170);
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
