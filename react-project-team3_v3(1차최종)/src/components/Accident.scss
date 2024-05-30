@@ -6,7 +6,7 @@
   ul {
     display: flex;
     justify-content: space-between;
-    width: 700px;
+    width: 100%;
 
     .category {
       width: 100%;
@@ -68,9 +68,8 @@
 /* AccidentsList.js */
 
 .list {
-  width: 900px;
+  width: 500px;
   border: 1px solid #aaa;
-  overflow-y: auto;
 
   .item {
     padding: 15px;

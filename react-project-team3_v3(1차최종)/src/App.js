@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import AccidentsList from './components/AccidentsList';
 import Categories from './components/Categories';
 import Search from './components/Search';
@@ -8,18 +8,18 @@ import './App.css';
 const App = () => {
   const [category, setCategory] = useState('all');
   const onSelect = useCallback((category) => setCategory(category), []);
+  const [year, setYear] = useState('');
+  const [city, setCity] = useState('');
+  const onYearData = useCallback((year) => setYear(year), []);
+  const onCityData = useCallback((city) => setCity(city), []);
 
-  const [datas, setDatas] = useState([]);
-  const [filteredDatas, setFilteredDatas] = useState([]);
-  const onData = useCallback((datas) => setFilteredDatas(datas), []);
-
-  console.log(datas);
+  console.log(year);
+  console.log(city);
 
   const [location, setLocation] = useState({
     LAT: '37.2893525',
     LOGT: '127.0535312',
   });
-
   const onPoint = useCallback((location) => setLocation(location), []);
 
   return (
@@ -29,8 +29,19 @@ const App = () => {
         <Categories category={category} onSelect={onSelect} />
       </div>
       <div>
-        <Search category={category} onData={onData} datas={datas} />
-        <AccidentsList category={category} datas={filteredDatas} onPoint={onPoint} setDatas={setDatas} />
+        <Search
+          category={category}
+          year={year}
+          city={city}
+          onYearData={onYearData}
+          onCityData={onCityData}
+        />
+        <AccidentsList
+          category={category}
+          onPoint={onPoint}
+          year={year}
+          city={city}
+        />
         <Map location={location} />
       </div>
     </div>
