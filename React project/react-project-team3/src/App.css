@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+
+.accident-menu {
+  header {
+    color: white;
+    background-color: rgb(143, 199, 187);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px 15px;
+  }
+}
+
+.myApp {
+  width: 1200px;
+  margin: 0 auto;
+  height: 700px;
+}
+
+.myApp > :nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  height: 700px;
+}
+
+.myApp > :nth-child(2) .search-list-box {
+  width: 300px;
+  border: 1px solid #aaa;
+}
+
+a {
+  text-decoration: none;
+}
