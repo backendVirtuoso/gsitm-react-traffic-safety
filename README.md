@@ -64,12 +64,7 @@
 
 
 ## 📹 시연 영상
-[![Video Lable](http://img.youtube.com/vi/LJhPGPtheq4/0.jpg)](http://youtu.be/LJhPGPtheq4)  
-이미지를 클릭하면 영상을 시청할 수 있는 링크로 이동됩니다.
-
-<br>
-
-## 🖥 화면별 기능
+[![Video Lable](http://img.youtube.com/vi/LJhPGPtheq4/0.jpg)](http://you성
 ![image](https://github.com/GSITM-Team3/react-traffic-safety/assets/144106932/d1570657-af01-4d3f-a4f5-161d63ba7d4e)
 ![image](https://github.com/GSITM-Team3/react-traffic-safety/assets/144106932/881ad2cb-29c4-4e31-83f9-2c8c6a3fbc72)
 ![image](https://github.com/GSITM-Team3/react-traffic-safety/assets/144106932/3c416d74-4e29-4b77-a1e1-acfb1f4c77b6)
