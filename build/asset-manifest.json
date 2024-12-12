@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gsitm-react-traffic-safety/static/css/main.69b3ef18.css",
-    "main.js": "/gsitm-react-traffic-safety/static/js/main.26d13e88.js",
+    "main.js": "/gsitm-react-traffic-safety/static/js/main.96e92a1a.js",
     "static/js/453.058e70ca.chunk.js": "/gsitm-react-traffic-safety/static/js/453.058e70ca.chunk.js",
     "index.html": "/gsitm-react-traffic-safety/index.html",
     "main.69b3ef18.css.map": "/gsitm-react-traffic-safety/static/css/main.69b3ef18.css.map",
-    "main.26d13e88.js.map": "/gsitm-react-traffic-safety/static/js/main.26d13e88.js.map",
+    "main.96e92a1a.js.map": "/gsitm-react-traffic-safety/static/js/main.96e92a1a.js.map",
     "453.058e70ca.chunk.js.map": "/gsitm-react-traffic-safety/static/js/453.058e70ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69b3ef18.css",
-    "static/js/main.26d13e88.js"
+    "static/js/main.96e92a1a.js"
   ]
 }
