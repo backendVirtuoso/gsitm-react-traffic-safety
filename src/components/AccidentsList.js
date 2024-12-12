@@ -19,9 +19,7 @@ const AccidentsList = ({ category, year, city, onPoint }) => {
           `https://openapi.gg.go.kr/TfcacdarM?KEY=${API_KEY}&TYPE=json&pIndex=1&pSize=1000`
         );
 
-        console.log('API Key:', process.env.REACT_APP_API_KEY);
         const response = response1.data.TfcacdarM[1].row;
-
         console.log(response);
         setAccidents(response);
       } catch (e) {

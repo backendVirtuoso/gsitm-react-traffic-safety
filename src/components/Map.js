@@ -26,7 +26,7 @@ const Map = ({ location }) => {
     // useEffect로 마운트 될 때 한번만 실행 되도록
     //카카오맵 스크립트 읽어오기
     const myScript = newScript(
-      `https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.REACT_APP_KAKAO_APP_KEY}`
+      `https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.REACT_APP_KAKAO_API_KEY}`
     );
 
     //스크립트 읽기 완료 후 카카오맵 설정
@@ -40,7 +40,7 @@ const Map = ({ location }) => {
           center: new kakao.maps.LatLng(lat, logt), //좌표설정
           level: 3,
         };
-        const map = new kakao.maps.Map(mapContainer, options); //맵생성
+        let map = new kakao.maps.Map(mapContainer, options); //맵생성
 
         // 맵이 이미 초기화된 경우 위치만 업데이트
         if (map) {
