@@ -55,7 +55,6 @@ const App = () => {
       <div className="content">
         <Routes>
           <Route
-            // path={['/:category', '/']}
             path="/:category?"
             element={
               <>

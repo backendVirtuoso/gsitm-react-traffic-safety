@@ -26,9 +26,7 @@ const Categories = ({ onSelect, reset }) => {
           {categories.map((c) => (
             <NavLink to={`/${c.name}`} key={c.name}>
               <li
-                className={`category ${
-                  selectedCategory === c.name ? 'active' : ''
-                }`}
+                className={`category ${selectedCategory === c.name ? 'active' : ''}`}
                 key={c.name}
                 onClick={() => {
                   setSelectedCategory(c.name);
@@ -41,9 +39,7 @@ const Categories = ({ onSelect, reset }) => {
           ))}
           <NavLink to="board">
             <li
-              className={`category ${
-                selectedCategory === '교통안전기관연락망' ? 'active' : ''
-              }`}
+              className={`category ${selectedCategory === '교통안전기관연락망' ? 'active' : ''}`}
               onClick={() => {
                 setSelectedCategory('교통안전기관연락망');
                 onSelect('교통안전기관연락망');

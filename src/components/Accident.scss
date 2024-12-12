@@ -7,9 +7,11 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
+
     a {
       text-decoration: none;
     }
+
     .category {
       width: 300px;
       padding: 25px 30px;
@@ -18,6 +20,7 @@
       color: #aaa;
       transition: 0.5s;
       cursor: pointer;
+      
       // 링크 걸게되면 자동 커서(손가락모양)이 되기 때문에 필요 없을 수도 있음
       &:hover {
         background-color: rgb(89, 192, 170);
@@ -34,7 +37,6 @@
 }
 
 /* Search.js */
-
 .searchBox {
   height: 252px;
   padding: 20px 15px;
@@ -69,7 +71,6 @@
 }
 
 /* AccidentsList.js */
-
 .list {
   height: 448px;
 
@@ -99,9 +100,9 @@
 }
 
 /* Board.js */
-
 div {
   width: 100%;
+
   .board {
     width: 100%;
     border: 1px solid #aaa;
@@ -112,16 +113,18 @@ div {
 
       form {
         display: flex;
-        //padding-left: 80px;
+
         .inputBox {
           width: 80%;
           padding: 0 20px;
           margin-left: 80px;
+
           div {
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
           }
+
           input {
             width: fit-content; // 내용에 맞춰 자동으로 크기 조절
             min-width: 600px;
@@ -131,11 +134,13 @@ div {
             border: 1px solid #ccc; // 테두리 스타일 지정
             border-radius: 4px; // 테두리 둥글게 처리
           }
+
           label {
             margin: auto 0;
             padding-left: 80px;
           }
         }
+
         button {
           cursor: pointer;
         }
@@ -168,7 +173,6 @@ div {
           text-align: center;
 
           td {
-            //padding: 10px 0;
             border-bottom: 1px solid #aaa;
           }
 
@@ -206,6 +210,7 @@ div {
     }
   }
 }
+
 /* Map.js */
 #map {
   width: 900px;

@@ -16,6 +16,7 @@ const selectYears = [
   { year: '2021' },
   { year: '2022' },
 ];
+
 // 2. 도시 목록을 정의하는 배열 정의
 const selectCitys = [
   { city: '가평군' },
@@ -49,7 +50,7 @@ const selectCitys = [
   { city: '화성시' },
 ];
 
-//3. Search 컴포넌트의 정의(App으로부터 onYearData, onCityData 함수를 props로 받아옴)
+// 3. Search 컴포넌트의 정의(App으로부터 onYearData, onCityData 함수를 props로 받아옴)
 const Search = ({ onYearData, onCityData, onResetCategory, onPoint }) => {
   // 4. 선택할 도시와 연도의 상태값 useState로 초기화
   const [selectedCity, setSelectedCity] = useState('');
@@ -70,6 +71,7 @@ const Search = ({ onYearData, onCityData, onResetCategory, onPoint }) => {
   const handleReset = () => {
     setSelectedCity('');
     setSelectedYear('');
+    
     // 기본값으로 설정한 빈 문자열("")을 상위 컴포넌트로 전달하여 초기화합니다.
     onCityData('');
     onYearData('');

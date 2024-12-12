@@ -26,7 +26,7 @@ const Map = ({ location }) => {
     // useEffect로 마운트 될 때 한번만 실행 되도록
     //카카오맵 스크립트 읽어오기
     const myScript = newScript(
-      'https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=f9349cf97b6fc59654343a6fef2d3d4c'
+      `https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.REACT_APP_KAKAO_APP_KEY}`
     );
 
     //스크립트 읽기 완료 후 카카오맵 설정

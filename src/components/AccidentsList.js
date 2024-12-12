@@ -14,10 +14,12 @@ const AccidentsList = ({ category, year, city, onPoint }) => {
     console.log('API Key:', API_KEY);
     const fetchData = async () => {
       setLoading(true);
+
       try {
         const response1 = await axios.get(
           `https://openapi.gg.go.kr/TfcacdarM?KEY=${API_KEY}&TYPE=json&pIndex=1&pSize=1000`
         );
+
         console.log('API Key:', process.env.REACT_APP_API_KEY);
         const response = response1.data.TfcacdarM[1].row;
 
@@ -54,8 +56,6 @@ const AccidentsList = ({ category, year, city, onPoint }) => {
     accidents &&
     accidents.filter(
       (accident) => accident.SIGUN_NM === city && accident.ACDNT_YY === year
-      // &&
-      // category === 'all'
     );
 
   // 세 개의 조건에 대한 필터링
@@ -75,8 +75,8 @@ const AccidentsList = ({ category, year, city, onPoint }) => {
         ? allAccidents
         : accidentSearchSelectedFilter
       : city && year
-      ? accidentAllSelectedFilter
-      : accidentCategoryFilter;
+        ? accidentAllSelectedFilter
+        : accidentCategoryFilter;
 
   const handleItemClick = (location) => {
     onPoint(location);
@@ -100,8 +100,7 @@ const AccidentsList = ({ category, year, city, onPoint }) => {
         {({ height, width }) =>
           // 조건부 렌더링
           filteredAccidents.length === 0 ? (
-            <div
-              style={{
+            <div style={{
                 height,
                 width,
                 display: 'flex',
