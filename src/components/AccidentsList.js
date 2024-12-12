@@ -11,7 +11,6 @@ const AccidentsList = ({ category, year, city, onPoint }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log('API Key:', API_KEY);
     const fetchData = async () => {
       setLoading(true);
 
