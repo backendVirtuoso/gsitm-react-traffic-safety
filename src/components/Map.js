@@ -24,12 +24,12 @@ const Map = ({ location }) => {
     const lat = parseFloat(location.LAT);
     const logt = parseFloat(location.LOGT);
     // useEffect로 마운트 될 때 한번만 실행 되도록
-    //카카오맵 스크립트 읽어오기
+    // 카카오맵 스크립트 읽어오기
     const myScript = newScript(
       `https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.REACT_APP_KAKAO_API_KEY}`
     );
 
-    //스크립트 읽기 완료 후 카카오맵 설정
+    // 스크립트 읽기 완료 후 카카오맵 설정
     myScript.then(() => {
       // then 메소드를 이용해 카카오 맵을 설정하는 콜백함수
       const kakao = window['kakao']; // 전역객체 window의 kakao 속성을 통해서 접근
